@@ -1,0 +1,16 @@
+{
+    "name": "portfolio-root",
+    "version": "1.0.0",
+    "description": "Root package for MERN Portfolio",
+    "scripts": {
+        "setup": "npm install && cd client && npm install && cd ../server && npm install",
+        "start": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+        "client": "npm run dev --prefix client",
+        "server": "npm run dev --prefix server"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.0"
+    },
+    "author": "Ayush Kumar",
+    "license": "ISC"
+}
