@@ -104,7 +104,7 @@ const Contact = () => {
                             type="submit"
                             className="px-10 py-4 rounded-lg bg-accent text-primary font-bold hover:bg-white hover:text-primary hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] transition-all duration-300 w-full md:w-auto min-w-[200px]"
                         >
-                            Say Hello
+                            Send Message
                         </button>
                     </div>
                     {status && <p className="text-center mt-6 text-accent font-medium relative z-10">{status}</p>}
