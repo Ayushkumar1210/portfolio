@@ -11,23 +11,33 @@ const Projects = () => {
     const placeholderProjects = [
         {
             _id: '1',
-            title: 'Project Alpha',
-            description: 'A robust web application built with React and Node.js. Features include real-time data visualization and user authentication.',
+            title: 'Loan Tracker',
+            description: 'A robust application designed for tracking and managing loans effectively.',
             techStack: ['React', 'Node.js', 'MongoDB'],
-            githubLink: '#',
-            liveLink: '#',
+            githubLink: 'https://github.com/5556Prabhat/Loan-Tracker',
+            liveLink: 'https://github.com/5556Prabhat/Loan-Tracker',
             category: 'Full Stack',
-            image: 'https://via.placeholder.com/600x400'
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop'
         },
         {
             _id: '2',
-            title: 'Project Beta',
-            description: 'An innovative mobile-first responsive website designed with modern UI principles.',
-            techStack: ['HTML', 'CSS', 'JavaScript'],
-            githubLink: '#',
-            liveLink: '#',
-            category: 'Frontend',
-            image: 'https://via.placeholder.com/600x400'
+            title: 'Algorithm',
+            description: 'A collection of Data Structures and Algorithms implementations and solutions.',
+            techStack: ['C++', 'Python', 'Java', 'DSA'],
+            githubLink: 'https://github.com/Ayushkumar1210/algorithm',
+            liveLink: 'https://ayushkumar1210.github.io/algorithm/',
+            category: 'DSA',
+            image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=400&fit=crop'
+        },
+        {
+            _id: '3',
+            title: 'Disaster Relief System',
+            description: 'A Disaster Relief Management System designed to efficiently allocate resources and support real-time emergency response.',
+            techStack: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'],
+            githubLink: 'https://github.com/Ayushkumar1210/disaster-relief-system',
+            liveLink: 'https://ayushkumar1210.github.io/disaster-relief-system/',
+            category: 'Full Stack',
+            image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop'
         }
     ];
 
@@ -52,7 +62,7 @@ const Projects = () => {
         ? projects
         : projects.filter(project => project.category === filter || project.techStack.includes(filter));
 
-    const categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
+    const categories = ['All', 'Full Stack', 'DSA'];
 
     return (
         <section id="projects" className="py-24 px-4 relative">
@@ -100,7 +110,9 @@ const Projects = () => {
                             </div>
                             <div className="p-8 flex flex-col flex-grow">
                                 <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-2xl font-display font-bold text-slate-100 group-hover:text-accent transition-colors">{project.title}</h3>
+                                    <a href={project.liveLink || '#'} target="_blank" rel="noopener noreferrer" className="hover:text-accent no-underline cursor-pointer">
+                                        <h3 className="text-2xl font-display font-bold text-slate-100 group-hover:text-accent transition-colors">{project.title}</h3>
+                                    </a>
                                     <div className="flex space-x-4 text-slate-400 mt-1">
                                         {project.githubLink && <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="hover:text-accent text-xl transition-colors"><FaGithub /></a>}
                                         {project.liveLink && <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="hover:text-accent text-xl transition-colors"><FaExternalLinkAlt /></a>}

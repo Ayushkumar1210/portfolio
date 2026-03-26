@@ -25,13 +25,13 @@ const Experience = () => {
 
     const experience = [
         {
-            role: "Software Developer Intern",
-            company: "Tech Solutions Inc.",
-            duration: "May 2023 - July 2023",
+            role: "Prompt and Output Evaluator",
+            company: "Outlier (Scale AI)",
+            url: "https://outlier.ai/",
+            duration: "December 2024 - March 2025",
             details: [
-                "Developed responsive web interfaces using React.js",
-                "Collaborated with backend team to integrate APIs",
-                "Improved site performance by 20%"
+                "Worked more than 700+ hours as a prompt and output evaluator",
+                "Evaluated AI model responses for Mathematics, Physics, and Coding"
             ]
         }
     ];
@@ -113,7 +113,13 @@ const Experience = () => {
                                     <h3 className="text-xl md:text-2xl font-display font-semibold text-slate-100 flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
                                         {exp.role}
                                         <span className="text-accent hidden md:inline">@</span>
-                                        <span className="text-accent/90">{exp.company}</span>
+                                        {exp.url ? (
+                                            <a href={exp.url} target="_blank" rel="noopener noreferrer" className="text-accent/90 hover:text-accent hover:underline transition-colors duration-300">
+                                                {exp.company}
+                                            </a>
+                                        ) : (
+                                            <span className="text-accent/90">{exp.company}</span>
+                                        )}
                                     </h3>
                                     <span className="text-sm font-mono text-slate-500 block mt-1 mb-5">{exp.duration}</span>
                                     <ul className="space-y-3">
